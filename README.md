@@ -11,10 +11,6 @@ Enhance your strings with _live_ mention components.
 * Generic output
 * Drop-in and use it. Your code will not have to adapt to anything.
 
-## Demo
-React: https://codesandbox.io/s/qxow0z7v49
-
-Preact: https://codesandbox.io/s/qv8qz89ll9
 
 ## Quick example
 ```jsx harmony
@@ -41,7 +37,7 @@ const Card = () => (
 The usual flow
 
 ```bash
-npm install react-hashtag --save
+npm install react-mention-parser --save
 ```
 
 ## Api
