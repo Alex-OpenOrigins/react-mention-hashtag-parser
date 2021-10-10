@@ -12,19 +12,19 @@ try {
     canRenderArray = false;
   } catch (err) {
     console.log(
-      "[react-hashtag] there's no react nor preact available to import"
+      "[react-mention] there's no react nor preact available to import"
     );
   }
 }
 
-const defaultHashtagRenderer = createElement => (hashtag, onClick) =>
+const defaultMentionRenderer = createElement => (mention, onClick) =>
   createElement(
     "span",
     {
-      key: hashtag,
-      onClick: onClick ? e => onClick(hashtag, e) : null
+      key: mention,
+      onClick: onClick ? e => onClick(mention, e) : null
     },
-    hashtag
+    mention
   );
 
 export default props => {
@@ -34,10 +34,10 @@ export default props => {
         ? props.children[0]
         : props.children
       : props.children;
-  const hashtagRenderer =
-    props.renderHashtag || defaultHashtagRenderer(createElement);
-  const onHashtagClick = props.onHashtagClick;
-  const parsed = parse(contents, hashtagRenderer, onHashtagClick);
+  const mentionRenderer =
+    props.renderMention || defaultMentionRenderer(createElement);
+  const onMentionClick = props.onMentionClick;
+  const parsed = parse(contents, mentionRenderer, onMentionClick);
 
   return canRenderArray ? parsed : createElement("span", null, parsed);
 };

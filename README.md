@@ -1,18 +1,13 @@
-React Hashtag
+React Mention Parser
 ====
-Enhance your strings with _live_ hashtag components.
+Enhance your strings with _live_ mention components.
 
-
-[![npm version](https://badge.fury.io/js/react-hashtag.svg?bust)](https://badge.fury.io/js/react-hashtag)
-[![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/cristianbote/react-hashtag.svg?maxAge=2592000)](https://codecov.io/github/cristianbote/react-hashtag?branch=master)
-[![Build Status](https://travis-ci.org/cristianbote/react-hashtag.svg?branch=master)](https://travis-ci.org/cristianbote/react-hashtag)
-[![gzip size](http://img.badgesize.io/https://unpkg.com/react-hashtag/dist/react-hashtag.js?compression=gzip)](https://unpkg.com/react-hashtag)
 
 ## Features:
 * Super small **~430 B**
 * Available for React and Preact
-* Custom renderer for each hashtag
-* Custom 'click' handler for each hashtag
+* Custom renderer for each mention
+* Custom 'click' handler for each mention
 * Generic output
 * Drop-in and use it. Your code will not have to adapt to anything.
 
@@ -31,13 +26,13 @@ const Card = () => (
 );
 
 // Will become
-import ReactHashtag from "react-hashtag";
+import ReactMentionParser from "react-mention-parser";
 
 const Card = () => (
     <p>
-        <ReactHashtag>
+        <ReactMentionParser>
             Here goes my card contents with #static text inside
-        </ReactHashtag>
+        </ReactMentionParser>
     </p>
 );
 ```
@@ -50,12 +45,12 @@ npm install react-hashtag --save
 ```
 
 ## Api
-The component `ReactHashtag` is actually pretty generic. Is not something that someone can't do in half an hour. But, this one has some generic API that could make you turn.
+The component `ReactMentionParser` is actually pretty generic. Is not something that someone can't do in half an hour. But, this one has some generic API that could make you turn.
 
 | Name | Type | Description
 | ---- | ---- | -----------
-| renderHashtag(value: String, onClick: Function) | function | Returns the custom element to be renderer instead of a `<span>`. You can go wild here.
-| onHashtagClick(value: String, e: Event) | function | The click handler for each hashtags. This will be called with the hashtag value that got clicked.
+| renderMention(value: String, onClick: Function) | function | Returns the custom element to be renderer instead of a `<span>`. You can go wild here.
+| onMentionClick(value: String, e: Event) | function | The click handler for each mentions. This will be called with the mention value that got clicked.
 
 
 ## Examples
@@ -64,13 +59,13 @@ The component `ReactHashtag` is actually pretty generic. Is not something that s
 ```jsx harmony
 const Card = (props) => (
     <p>
-        <ReactHashtag
-            renderHashtag={(hashtagValue) => (
-                <div className="hashtag">{hashtagValue}</div>
+        <ReactMentionParser
+            renderMention={(mentionValue) => (
+                <div className="mention">{mentionValue}</div>
             )}
         >
             {props.children}
-        </ReactHashtag>
+        </ReactMentionParser>
     </p>
 );
 ```
@@ -78,15 +73,15 @@ const Card = (props) => (
 ### With styled components
 ```jsx harmony
 
-const Hashtag = styled.span`
+const Mention = styled.span`
     color: tomato;
 `;
 
 const Card = (props) => (
     <p>
-        <ReactHashtag
-            renderHashtag={(hashtagValue) => (
-                <Hashtag>{hashtagValue}</Hashtag>
+        <ReactMentionParser
+            renderHashtag={(mentionValue) => (
+                <Mention>{mentionValue}</Mention>
             )}
         >
             {props.children}
@@ -105,25 +100,25 @@ const StyledHashtag = styled.a`
 /**
 * Custom component to render the hashtags with a custom renderer
 */
-const Hashtags = (props) => (
-    <ReactHashtag
-        renderHashtag={(hashtagValue) => (
+const Mentions = (props) => (
+    <ReactMentionParser
+        renderMention={(mentionValue) => (
             <StyledHashtag
-                href={`/search/${hashtagValue}`}
+                href={`/search/${mentionValue}`}
             >
-                {hashtagValue}
+                {mentionValue}
             </StyledHashtag>
         )}
     >
         {props.children}
-    </ReactHashtag>
+    </ReactMentionParser>
 );
 
 const Card = (props) => (
     <p>
-        <Hashtags>
+        <ReactMentionParser>
             {props.children}
-        </Hashtags>
+        </ReactMentionParser>
     </p>
 );
 ```

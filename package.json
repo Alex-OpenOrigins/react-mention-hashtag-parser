@@ -1,10 +1,10 @@
 {
-  "name": "react-hashtag",
-  "version": "2.1.2",
-  "description": "React hashtags parser with custom renderer and click action on each hashtag.",
-  "main": "dist/react-hashtag.js",
-  "umd:main": "dist/react-hashtag.umd.js",
-  "module": "dist/react-hashtag.m.js",
+  "name": "react-mention-parser",
+  "version": "1.1.0",
+  "description": "React Mention parser with custom renderer and click action on each mention.",
+  "main": "dist/react-mention-parser.js",
+  "umd:main": "dist/react-mention-parser.umd.js",
+  "module": "dist/react-mention-parser.m.js",
   "source": "src/index.js",
   "scripts": {
     "test": "jest --config jest.config.json --coverage",
@@ -12,18 +12,18 @@
     "build": "microbundle --source src/index.js --target browser --output dist --sourcemap false"
   },
   "keywords": [
-    "hashtag",
+    "mention",
     "react",
     "parser",
-    "hashtags"
+    "mentions"
   ],
   "files": [
     "README.md",
     "dist",
     "package.json"
   ],
-  "author": "Cristian Bote <botecristian@yahoo.com>",
-  "repository": "https://github.com/cristianbote/react-hashtag",
+  "author": "Akash Gupta <akkuba53@gmail.com>",
+  "repository": "https://github.com/akash-gupt/react-mention-parser",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
