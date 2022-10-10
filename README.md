@@ -1,6 +1,6 @@
 React Mention Parser
 ====
-Enhance your strings with _live_ mention components.
+Enhance your strings with _live_ mention and hashtag components.
 
 
 ## Features:

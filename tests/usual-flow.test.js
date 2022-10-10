@@ -11,7 +11,7 @@ describe('ReactHashtag should behave', () => {
         const context = shallow(
             <div>
                 <ReactHashtag>
-                    Hello #there fellow #dude#Works?
+                    Hello there @user welcome! #dude#Works?
                 </ReactHashtag>
             </div>
         );
@@ -28,7 +28,7 @@ describe('ReactHashtag should behave', () => {
 
         const context = shallow(
             <div>
-                <ReactHashtag renderHashtag={hashtagRenderer}>
+                <ReactHashtag renderMention={hashtagRenderer}>
                     #lots
                     #of
                     #hashtags
@@ -46,7 +46,7 @@ describe('ReactHashtag should behave', () => {
         const onHashtagClick = jest.fn();
         const context = mount(
             <div>
-                <ReactHashtag onHashtagClick={onHashtagClick}>
+                <ReactHashtag onMentionClick={onHashtagClick}>
                     #lots
                     #of
                     #hashtags
@@ -70,7 +70,7 @@ describe('ReactHashtag should behave', () => {
 
         const context = mount(
             <div>
-                <ReactHashtag renderHashtag={hashtagRenderer} onHashtagClick={onHashtagClick}>
+                <ReactHashtag renderMention={hashtagRenderer} onMentionClick={onHashtagClick}>
                     #lots
                     #of
                     #hashtags

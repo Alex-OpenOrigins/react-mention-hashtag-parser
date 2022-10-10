@@ -1,10 +1,10 @@
 {
-  "name": "react-mention-parser",
-  "version": "1.1.0",
-  "description": "React Mention parser with custom renderer and click action on each mention.",
-  "main": "dist/react-mention-parser.js",
-  "umd:main": "dist/react-mention-parser.umd.js",
-  "module": "dist/react-mention-parser.m.js",
+  "name": "react-mention-hashtag-parser",
+  "version": "1.0.0",
+  "description": "React Mention and hashtag parser with custom renderer and click action on each mention/hashtag.",
+  "main": "dist/react-mention-hashtag-parser.js",
+  "umd:main": "dist/react-mention-hashtag-parser.umd.js",
+  "module": "dist/react-mention-hashtag-parser.m.js",
   "source": "src/index.js",
   "scripts": {
     "test": "jest --config jest.config.json --coverage",
@@ -22,8 +22,8 @@
     "dist",
     "package.json"
   ],
-  "author": "Akash Gupta <akkuba53@gmail.com>",
-  "repository": "https://github.com/akash-gupt/react-mention-parser",
+  "author": "Alex - Open Origins",
+  "repository": "https://github.com/Alex-OpenOrigins/react-mention-hashtag-parser",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
